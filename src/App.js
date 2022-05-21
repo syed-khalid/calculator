@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+// import Buttons from "./components/buttons/buttons";
+// import Inputbox from "./components/input-box/input-box";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [inputnum, setInputNum] = useState(0);
+	const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+	return (
+		<div>
+			<div>
+				<h1>{inputnum}</h1>
+				<div>
+					{numbers.map((num) => {
+						return (
+							<button id={num} key={num} onClick={() => setInputNum(num)}>
+								{num}
+							</button>
+						);
+					})}
+					<button id='reset-button' onClick={() => setInputNum(0)}>
+						Reset
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
+
