@@ -19,6 +19,7 @@ function App() {
 				inputSetter={inputSetter}
 				setInputNum={setInputNum}
 			/>
+			<div id='calculation-buttons'></div>
 		</div>
 	);
 }

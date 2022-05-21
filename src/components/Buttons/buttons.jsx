@@ -1,3 +1,6 @@
+import * as React from "react";
+import IconButton from "@mui/material/IconButton";
+import BackspaceIcon from "@mui/icons-material/Backspace";
 const Buttons = ({ numbers, inputSetter, setInputNum }) => {
 	return (
 		<div>
@@ -8,9 +11,12 @@ const Buttons = ({ numbers, inputSetter, setInputNum }) => {
 					</button>
 				);
 			})}
-			<button id='reset-button' onClick={() => setInputNum(0)}>
-				Reset
-			</button>
+			<IconButton
+				aria-label='delete'
+				id='reset-button'
+				onClick={() => setInputNum(0)}>
+				<BackspaceIcon />
+			</IconButton>
 		</div>
 	);
 };
